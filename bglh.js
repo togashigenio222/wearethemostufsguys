@@ -35,7 +35,6 @@ const numeroCurso = (lista,nome) => {
     const contagem = lista.filter((x) => x.curso == nome)
     return contagem.length
 };
-//console.log(numeroCurso(alunos,'CC'))
 
 console.log(ordenarMatricula(alunos))
 
