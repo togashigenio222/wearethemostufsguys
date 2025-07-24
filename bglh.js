@@ -31,7 +31,7 @@ const removerAluno = (lista, nome) => lista.filter((del) => del.aluno !== nome)
 //7
 const ordenarMatricula = (lista) => lista.sort((primeira, segunda)=> primeira.matricula - segunda.matricula)
 //8
-const numeroCurso = (lista,nome) => {
+const contagemDoCurso = (lista,nome) => {
     const contagem = lista.filter((x) => x.curso == nome)
     return contagem.length
 };
