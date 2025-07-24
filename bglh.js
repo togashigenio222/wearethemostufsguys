@@ -1,10 +1,10 @@
 //1
 const alunos = [
-    {aluno: 'Rhuan' , idade: 18, matricula: 202500035548, curso: 'SI'},
-    {aluno: 'Pablo' , idade: 20, matricula: 202400045768, curso: 'CC'},
-    {aluno: 'José' , idade: 31, matricula: 201900088976, curso: 'SI'},
-    {aluno: 'Antônio' , idade: 29, matricula: 202100099876, curso: 'EC'},
-    {aluno: 'Daví' , idade: 19, matricula: 202200078792, curso: 'CC'}
+    {aluno: 'Rhuan' , idade: 19, matricula: 202500035548, curso: 'EC'},
+    {aluno: 'Pablo' , idade: 20, matricula: 202400045768, curso: 'SI'},
+    {aluno: 'José' , idade: 31, matricula: 201900088976, curso: 'EC'},
+    {aluno: 'Antônio' , idade: 29, matricula: 202100099876, curso: 'CC'},
+    {aluno: 'Daví' , idade: 19, matricula: 202200078792, curso: 'EC'}
 
 ]
 //2
@@ -15,20 +15,29 @@ const turma = [
     ...alunos, adicionarAluno
     ]
     //4
-const listarAlunos = (discente) => alunos.map((x)=> x.aluno == discente? x: null)
+const listarAlunos = (discente) =>{
+    const identificarAluno = alunos.map((x)=> x.aluno == discente? x: '')
+    const TirarOvazioAluno = identificarAluno.filter((aluno) => aluno != '')
+    return TirarOvazioAluno
+}
 //5
-const buscarCurso = (curso) => alunos.map((x)=> x.curso == curso? x: null)
+const buscarCurso = (lista,curso) => {
+    const indentificar = lista.map((aluno)=> aluno.curso == curso? aluno: '')
+    const tirarOVazio = indentificar.filter((aluno) => aluno != '')
+    return tirarOVazio
+}
 //6
-const removerAluno = (nome) => alunos.filter((x) => x.aluno !== nome)
+const removerAluno = (lista, nome) => lista.filter((del) => del.aluno !== nome)
 //7
-const ordenarMatricula = alunos.sort((a, b)=> a.matricula - b.matricula)
+const ordenarMatricula = alunos.sort((primeira, segunda)=> primeira.matricula - segunda.matricula)
 //8
 const numeroCurso = (lista,nome) => {
     const contagem = lista.filter((x) => x.curso == nome)
     return contagem.length
-}
-console.log(numcur(alunos,'CC'))
+};
+//console.log(numeroCurso(alunos,'CC'))
 
+console.log(removerAluno(alunos,'Rhuan'))
 
 
 
