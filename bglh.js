@@ -19,11 +19,11 @@ const listarAlunos = (discente) => alunos.map((x)=> x.aluno == discente? x: null
 //5
 const buscarCurso = (curso) => alunos.map((x)=> x.curso == curso? x: null)
 //6
-const remover = (nome) => alunos.filter((x) => x.aluno !== nome)
+const removerAluno = (nome) => alunos.filter((x) => x.aluno !== nome)
 //7
 const ordenarMatricula = alunos.sort((a, b)=> a.matricula - b.matricula)
-
-const numcur = (lista,nome) => {
+//8
+const numeroCurso = (lista,nome) => {
     const contagem = lista.filter((x) => x.curso == nome)
     return contagem.length
 }
