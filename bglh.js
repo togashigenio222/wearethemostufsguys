@@ -35,4 +35,3 @@ const contagemDoCurso = (lista,nome) => {
     const contagem = lista.filter((x) => x.curso == nome)
     return contagem.length
 };
-
