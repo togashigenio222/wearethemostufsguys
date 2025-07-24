@@ -15,8 +15,8 @@ const turma = [
     ...alunos, adicionarAluno
     ]
     //4
-const listarAlunos = (discente) =>{
-    const identificarAluno = alunos.map((x)=> x.aluno == discente? x: '')
+const listarAlunos = (lista,discente) =>{
+    const identificarAluno = lista.map((x)=> x.aluno == discente? x: '')
     const TirarOvazioAluno = identificarAluno.filter((aluno) => aluno != '')
     return TirarOvazioAluno
 }
@@ -37,7 +37,7 @@ const numeroCurso = (lista,nome) => {
 };
 //console.log(numeroCurso(alunos,'CC'))
 
-console.log(removerAluno(alunos,'Rhuan'))
+console.log(listarAlunos(alunos,'Rhuan'))
 
 
 
