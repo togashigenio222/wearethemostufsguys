@@ -8,12 +8,12 @@ const alunos = [
 
 ]
 //2
-const adicionarAluno = (nomeRe,idadeRe,matriculaRe,cursoRe) => [
-    {aluno: 'Arlindo', idade: 19, matricula: 202500032509, curso: 'EC'}]
+const turma = [...alunos]
 //3
-const turma = [
-    ...alunos, adicionarAluno
-    ]
+const adicionarAluno = (lista) => (nomeRe,idadeRe,matriculaRe,cursoRe) => {
+    const adicionarDiscente = [...lista, {aluno: nomeRe, idade: idadeRe, matricula: matriculaRe, curso: cursoRe}]
+    return adicionarDiscente //'Arlindo', 19, 202500032509, 'SI'
+}
     //4
 const listarAlunos = (lista,discente) =>{
     const identificarAluno = lista.map((x)=> x.aluno == discente? x: '')
@@ -35,8 +35,4 @@ const contagemDoCurso = (lista,nome) => {
     const contagem = lista.filter((x) => x.curso == nome)
     return contagem.length
 };
-
-console.log(ordenarMatricula(alunos))
-
-
 
