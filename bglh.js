@@ -5,14 +5,14 @@ const alunos = [
     {aluno: 'José' , idade: 31, matricula: 201900088976, curso: 'EC'},
     {aluno: 'Antônio' , idade: 29, matricula: 202100099876, curso: 'CC'},
     {aluno: 'Daví' , idade: 19, matricula: 202200078792, curso: 'EC'}
-
+//console.log(alunos)
 ]
 //2
-const turma = [...alunos]
+const turma = (lista) => [...lista] //console.log(turma(alunos))
 //3
 const adicionarAluno = (lista) => (nomeRe,idadeRe,matriculaRe,cursoRe) => {
     const adicionarDiscente = [...lista, {aluno: nomeRe, idade: idadeRe, matricula: matriculaRe, curso: cursoRe}]
-    return adicionarDiscente //'Arlindo', 19, 202500032509, 'SI'
+    return adicionarDiscente //console.log(adicionarAluno(alunos)('Arlindo', 19, 202500032509, 'SI'))
 }
     //4
 const listarAlunos = (lista,discente) =>{
