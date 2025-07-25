@@ -36,20 +36,20 @@ const contagemDoCurso = (lista,nome) => {
     return contagem.length
 };
 //9 
-const editarAlunos = (lista,matricula,tipodado,novodado) => {
-    const alterarDados = () => {
+const Alterador = (lista,matricula,tipodado,novodado) => {
+    const AlterarDados = () => {
         const indentificaroAluno = lista.filter((aluno) => aluno.matricula == matricula)
         if(tipodado == 'nome'){
-            return indentificaroAluno.map((d) => [{...d, aluno: novodado}])
+            return indentificaroAluno.map((d) => ({...d, aluno: novodado}))
         }
         else if(tipodado == 'matricula'){
-            return indentificaroAluno.map((d) => [{...d, matricula: novodado}])
+            return indentificaroAluno.map((d) => ({...d, matricula: novodado}))
         }
         else if(tipodado == 'curso'){
-            return indentificaroAluno.map((d) => [{...d, curso: novodado}])
+            return indentificaroAluno.map((d) => ({...d, curso: novodado}))
         }
         else if(tipodado == 'idade'){
-            return indentificaroAluno.map((d) => [{...d, idade: novodado}])
+            return indentificaroAluno.map((d) => ({...d, idade: novodado}))
         }
         else{
                 return 'erro'
@@ -57,6 +57,7 @@ const editarAlunos = (lista,matricula,tipodado,novodado) => {
 
     }
     const removerdado = lista.filter((aluno) => aluno.matricula != matricula)
-    const adicionarDado = [...removerdado, ...alterarDados()]
-    return adicionarDado
+    const adicionarDado = [...removerdado, AlterarDados()[0]]
+    return adicionarDado
 }
+
