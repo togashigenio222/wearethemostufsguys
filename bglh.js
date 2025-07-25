@@ -7,34 +7,44 @@ const alunos = [
     {aluno: 'Daví' , idade: 19, matricula: 202200078792, curso: 'EC'}
 //console.log(alunos)
 ]
+
 //2
 const turma = (lista) => [...lista] //console.log(turma(alunos))
+
 //3
 const adicionarAluno = (lista) => (nomeRe,idadeRe,matriculaRe,cursoRe) => {
     const adicionarDiscente = [...lista, {aluno: nomeRe, idade: idadeRe, matricula: matriculaRe, curso: cursoRe}]
     return adicionarDiscente //console.log(adicionarAluno(alunos)('Arlindo', 19, 202500032509, 'SI'))
 }
-    //4
+
+//4
 const listarAlunos = (lista,discente) =>{
     const identificarAluno = lista.map((x)=> x.aluno == discente? x: '')
     const TirarOvazioAluno = identificarAluno.filter((aluno) => aluno != '')
     return TirarOvazioAluno
+    //console.log(listarAlunos(alunos,'José'))
 }
+
 //5
 const buscarCurso = (lista,curso) => {
     const indentificar = lista.map((aluno)=> aluno.curso == curso? aluno: '')
     const tirarOVazio = indentificar.filter((aluno) => aluno != '')
     return tirarOVazio
+    //console.log(buscarCurso(alunos,'SI'))
 }
+
 //6
-const removerAluno = (lista, nome) => lista.filter((del) => del.aluno !== nome)
+const removerAluno = (lista, nome) => lista.filter((del) => del.aluno !== nome) //console.log(removerAluno(alunos, 'Daví'))
+
 //7
-const ordenarMatricula = (lista) => lista.sort((primeira, segunda)=> primeira.matricula - segunda.matricula)
+const ordenarMatricula = (lista) => lista.sort((primeira, segunda)=> primeira.matricula - segunda.matricula) //console.log(ordenarMatricula(alunos))
+
 //8
 const contagemDoCurso = (lista,nome) => {
-    const contagem = lista.filter((x) => x.curso == nome)
-    return contagem.length
+    const contagem = lista.filter((graduacao) => graduacao.curso == nome)
+    return contagem.length //console.log(contagemDoCurso(alunos, 'EC'))
 };
+
 //9 
 const Alterador = (lista,matricula,tipodado,novodado) => {
     const AlterarDados = () => {
@@ -60,4 +70,5 @@ const Alterador = (lista,matricula,tipodado,novodado) => {
     const adicionarDado = [...removerdado, AlterarDados()[0]]
     return adicionarDado
 }
+
 
