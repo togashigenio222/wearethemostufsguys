@@ -19,7 +19,7 @@ const adicionarAluno = (lista) => (nomeRe,idadeRe,matriculaRe,cursoRe) => {
 
 //4
 const listarAlunos = (lista,discente) =>{
-    const identificarAluno = lista.map((x)=> x.aluno == discente? x: '')
+    const identificarAluno = lista.map((id)=> id.aluno == discente? id: '')
     const TirarOvazioAluno = identificarAluno.filter((aluno) => aluno != '')
     return TirarOvazioAluno
     //console.log(listarAlunos(alunos,'José'))
