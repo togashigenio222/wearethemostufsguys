@@ -68,7 +68,7 @@ const Alterador = (lista,matricula,tipodado,novodado) => {
     }
     const removerdado = lista.filter((aluno) => aluno.matricula != matricula)
     const adicionarDado = [...removerdado, AlterarDados()[0]]
-    return adicionarDado
-}
+    return adicionarDado 
+} //console.log(Alterador(alunos, 202100099876, 'curso', 'SI'))
 
 
